@@ -7,12 +7,8 @@
   <title>Mybrary</title>
 </head>
 <body>
-  Before
-  <br>
-  {% block body %}
-    
-  {% endblock %}
-  <br>
-  After
+  {% include "../partials/header.njk" %}
+  {% include "../partials/errorMessage.njk" %}
+  {% block body %}{% endblock %}
 </body>
 </html>
