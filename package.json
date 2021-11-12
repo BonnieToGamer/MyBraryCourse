@@ -19,5 +19,9 @@
   "devDependencies": {
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.13.0",
+    "npm": "8.0.1"
   }
 }
