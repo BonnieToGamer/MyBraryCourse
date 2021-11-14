@@ -28,7 +28,8 @@ const env = njk.configure(
 
 app.set('view engine', 'njk');
 app.set('views', __dirname + '/views');
-app.use(express.static('public'));
+//app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}));
 
 Mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
