@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import Mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
+import methodOverride from 'method-override';
 
 import router from './routes/index.js';
 import authorRouter from './routes/authors.js';
@@ -28,7 +29,7 @@ const env = njk.configure(
 
 app.set('view engine', 'njk');
 app.set('views', __dirname + '/views');
-//app.use(express.static('public'));
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({limit: '10mb', extended: false}));
 

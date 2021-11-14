@@ -1,0 +1,13 @@
+{% import "../partials/customMethodForm.njk" as forms %}
+{% extends "../layout/layout.njk" %}
+{% block body %}
+  <h2>{{ author.name }}</h2>
+  <a href="/authors/{{author.id}}/edit">Edit</a>
+  {{ forms.delete( "/authors/" + author.id ) }}
+  {% if (booksByAuthor.length > 0) %}
+    <h2>Books By Author</h2>
+    {% for book in booksByAuthor %}
+      <img src="{{book.coverImagePath}}" height="150" width="100">
+    {% endfor %}
+  {% endif %}
+{% endblock %}
