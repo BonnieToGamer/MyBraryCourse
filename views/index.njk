@@ -1,5 +1,10 @@
 {% extends "./layout/layout.njk" %}
 
 {% block body %}
-  Middle
+  <h2>Recently Added</h2>
+  <div>
+    {% for book in books %}
+      <img src="{{book.coverImagePath}}" height="150" width="100">
+    {% endfor %}
+  </div>
 {% endblock %}
