@@ -50,8 +50,13 @@ function toDateString(date) {
   return date.toDateString();
 }
 
+function ternaryEqual(variable, condition, case1, case2) {
+  return variable = condition ? case1 : case2;
+}
+
 env.addGlobal('dateConvert', dateConverter);
 env.addGlobal('toDateString', toDateString);
+env.addGlobal('ternaryEqual', ternaryEqual);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening to port ${process.env.PORT || 3000}. http://localhost:${process.env.PORT, 3000}`)

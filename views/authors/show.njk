@@ -1,3 +1,4 @@
+{% import "../partials/bookGrid.njk" as grid %}
 {% import "../partials/customMethodForm.njk" as forms %}
 {% extends "../layout/layout.njk" %}
 {% block body %}
@@ -8,10 +9,6 @@
   </div>
   {% if (booksByAuthor.length > 0) %}
     <h2 class="page-header">Books By Author</h2>
-    {% for book in booksByAuthor %}
-      <a href="/books/{{ book.id }}">
-        <img src="{{book.coverImagePath}}" height="150" width="100">
-      </a>
-    {% endfor %}
+    {{ grid.bookGrid(booksByAuthor, false) }}
   {% endif %}
 {% endblock %}

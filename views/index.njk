@@ -1,12 +1,6 @@
+{% import "./partials/bookGrid.njk" as grid %}
 {% extends "./layout/layout.njk" %}
-
 {% block body %}
   <h2 class="page-header">Recently Added</h2>
-  <div>
-    {% for book in books %}
-      <a href="/books/{{ book.id }}">
-        <img src="{{book.coverImagePath}}" height="150" width="100">
-      </a>
-    {% endfor %}
-  </div>
+  {{ grid.bookGrid(books, true) }}
 {% endblock %}

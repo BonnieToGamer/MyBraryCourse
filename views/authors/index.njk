@@ -15,11 +15,13 @@
   </form>
   <br>
   {% for author in authors %}
-    <div>{{author.name}}</div>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="/authors/{{author.id}}">View</a>
-      <a class="btn btn-primary" href="/authors/{{author.id}}/edit">Edit</a>
-      {{ forms.delete( "/authors/" + author.id ) }}
+    <div class="author-row">
+      <div class="author-name">{{author.name}}</div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/authors/{{author.id}}">View</a>
+        <a class="btn btn-primary" href="/authors/{{author.id}}/edit">Edit</a>
+        {{ forms.delete( "/authors/" + author.id ) }}
+      </div>
     </div>
   {% endfor %}
 {% endblock %}
