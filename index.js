@@ -46,7 +46,12 @@ function dateConverter(date) {
   return date == null ? '' : date.toISOString().split('T')[0];
 }
 
+function toDateString(date) {
+  return date.toDateString();
+}
+
 env.addGlobal('dateConvert', dateConverter);
+env.addGlobal('toDateString', toDateString);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening to port ${process.env.PORT || 3000}. http://localhost:${process.env.PORT, 3000}`)

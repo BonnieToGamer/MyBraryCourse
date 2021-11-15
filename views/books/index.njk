@@ -19,7 +19,9 @@
   <br>
   <div>
     {% for book in books %}
+    <a href="/books/{{ book.id }}">
       <img src="{{book.coverImagePath}}" height="150" width="100">
+    </a>
     {% endfor %}
   </div>
 {% endblock %}

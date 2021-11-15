@@ -1,0 +1,9 @@
+{% extends "../layout/layout.njk" %}
+{% block body %}
+  <h2>Edit Book</h2>
+  <form action="/books/{{ book.id }}?_method=PUT" method="POST">
+    {% include "./_form_fields.njk" %}
+    <a href="/books">Cancel</a>
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}

@@ -4,7 +4,9 @@
   <h2>Recently Added</h2>
   <div>
     {% for book in books %}
-      <img src="{{book.coverImagePath}}" height="150" width="100">
+      <a href="/books/{{ book.id }}">
+        <img src="{{book.coverImagePath}}" height="150" width="100">
+      </a>
     {% endfor %}
   </div>
 {% endblock %}
