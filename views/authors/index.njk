@@ -1,7 +1,7 @@
 {% import "../partials/customMethodForm.njk" as forms %}
 {% extends "../layout/layout.njk" %}
 {% block body %}
-  <h2>Search Authors</h2>
+  <h2 class="page-header">Search Authors</h2>
   <form action="/authors" method="get">
     <label>Name</label><input type="text" name="name" value="{{searchOptions.name}}">
     <button type="submit">Search</button>
@@ -9,8 +9,10 @@
   <br>
   {% for author in authors %}
     <div>{{author.name}}</div>
-    <a href="/authors/{{author.id}}">View</a>
-    <a href="/authors/{{author.id}}/edit">Edit</a>
-    {{ forms.delete( "/authors/" + author.id ) }}
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/authors/{{author.id}}">View</a>
+      <a class="btn btn-primary" href="/authors/{{author.id}}/edit">Edit</a>
+      {{ forms.delete( "/authors/" + author.id ) }}
+    </div>
   {% endfor %}
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "../layout/layout.njk" %}
 {% block body %}
-  <h2>Edit Author</h2>
+  <h2 class="page-header">Edit Author</h2>
   <form action="/authors/{{author.id}}?_method=PUT" method="POST">
     {% include "./_form_fields.njk" %}
     <a href="/authors/{{author.id}}">Cancel</a>
