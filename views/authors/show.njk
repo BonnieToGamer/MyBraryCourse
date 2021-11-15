@@ -2,10 +2,12 @@
 {% extends "../layout/layout.njk" %}
 {% block body %}
   <h2 class="page-header">{{ author.name }}</h2>
-  <a href="/authors/{{author.id}}/edit">Edit</a>
-  {{ forms.delete( "/authors/" + author.id ) }}
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/authors/{{author.id}}/edit">Edit</a>
+    {{ forms.delete( "/authors/" + author.id ) }}
+  </div>
   {% if (booksByAuthor.length > 0) %}
-    <h2>Books By Author</h2>
+    <h2 class="page-header">Books By Author</h2>
     {% for book in booksByAuthor %}
       <a href="/books/{{ book.id }}">
         <img src="{{book.coverImagePath}}" height="150" width="100">
