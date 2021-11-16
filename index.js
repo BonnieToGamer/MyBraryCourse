@@ -1,7 +1,9 @@
 import express from 'express';
 import njk from 'nunjucks';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import {
+  fileURLToPath
+} from 'url';
 import Mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
@@ -16,7 +18,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // __dirname and __filename fix for ECMAScript module
-const __filename = fileURLToPath(import.meta.url);
+const __filename = fileURLToPath(
+  import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
@@ -31,9 +34,14 @@ app.set('view engine', 'njk');
 app.set('views', __dirname + '/views');
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({limit: '10mb', extended: false}));
+app.use(bodyParser.urlencoded({
+  limit: '10mb',
+  extended: false
+}));
 
-Mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
+Mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true
+});
 const db = Mongoose.connection;
 db.on('error', error => console.error(error));
 db.once('open', () => console.log("Connected to Mongoose"));
