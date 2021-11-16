@@ -12,10 +12,15 @@
   <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
   <script defer src="/javascripts/fileUpload.js"></script>
   <title>Mybrary</title>
+  <link id="main-css" rel="stylesheet" href="/stylesheets/main.css">
 </head>
 <body>
-  {% include "../partials/header.njk" %}
-  {% include "../partials/errorMessage.njk" %}
-  {% block body %}{% endblock %}
+  <div class="container">
+    {% include "../partials/header.njk" %}
+    <div class="inner-container">
+      {% include "../partials/errorMessage.njk" %}
+      {% block body %}{% endblock %}
+    </div>
+  </div>
 </body>
 </html>

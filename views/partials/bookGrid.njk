@@ -1,0 +1,12 @@
+{% macro bookGrid(books, large) %}
+  {% set bookCoverClass = ternaryEqual(large, large, 'book-cover-large', '') %}
+  {% set bookGridClass = ternaryEqual(large, large, 'book-grid-large', '') %}
+
+  <div class="book-grid {{ bookGridClass }}">
+    {% for book in books %}
+      <a href="/books/{{ book.id }}">
+        <img class="book-cover {{ bookCoverClass }}" src="{{book.coverImagePath}}">
+      </a>
+    {% endfor %}
+  </div>
+{% endmacro %}
